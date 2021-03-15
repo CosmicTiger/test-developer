@@ -1,3 +1,12 @@
+/**
+ * @author CosmicTiger
+ *	_reset.scss
+ * @description this file would be to reset any styling
+ * that were include through the client browser, _vendor.scss
+ * or any similar agent that could lead to collateral damage
+ * in our specific styling within our app
+ */
+
 * {
 	box-sizing: border-box;
 	margin: 0;
