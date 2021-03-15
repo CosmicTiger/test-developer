@@ -1,3 +1,11 @@
+/**
+ * @author CosmicTiger
+ *	_functions.scss
+ * @description this file is used to give the
+ * computational application of SassLang in the necessity 
+ * of @functions
+ */
+
 @function font-conversion-pxtorem($px) {
 	$result: ($px / $standard-size) * 1rem;
 	@return $result;

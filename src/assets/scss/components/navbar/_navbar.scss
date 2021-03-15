@@ -1,0 +1,31 @@
+/**
+ * @author CosmicTiger
+ *	_navbar.scss
+ * @description this file would be for styling
+ * all elements within our navbar nested in our header element
+ */
+
+.Navbar {
+	&-brand {
+		font-size: $bigger-size;
+	}
+
+	&-logo.svg-inline--fa {
+		font-size: calc(#{$big-size} + 10px);
+		margin-right: 8px;
+	}
+
+	&-form {
+		display: flex;
+		justify-content: space-around;
+		width: 340px;
+	}
+
+	&-input {
+		padding: 0.375rem 0.64rem;
+	}
+
+	&-button {
+		margin-left: 12px;
+	}
+}

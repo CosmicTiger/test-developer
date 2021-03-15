@@ -1,0 +1,16 @@
+/**
+ * @author CosmicTiger
+ *	_common.scss
+ * @description this file would be for all the most
+ * common styles for elements that are recurrent in the app
+ */
+
+// <BasicLayout/> styles
+.basic-layout {
+	padding-left: 0;
+	padding-right: 0;
+
+	& > main {
+		min-height: 83.5vh;
+	}
+}

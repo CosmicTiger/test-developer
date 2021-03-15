@@ -1,0 +1,19 @@
+/**
+ * @author CosmicTiger
+ *	_footer.scss
+ * @description this file would be for styling
+ * all elements within our footer section
+ */
+
+.Footer {
+	background-color: $light-white;
+	border-top: 0.4px solid $light-dark;
+
+	&-content {
+		padding: 0 14%;
+
+		> a {
+			display: inline-block;
+		}
+	}
+}
