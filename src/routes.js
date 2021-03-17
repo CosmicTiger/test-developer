@@ -1,7 +1,12 @@
 import React from 'react';
 
 // Views import for the different content of each view
+// Main view of the search
 const Home = React.lazy(() => import('./views/Home'));
+// View for the details of each Github User
+const Profile = React.lazy(() => <p>This is a test</p>);
+// View for any type of wrong path inserted by the user
+const NotFound = React.lazy(() => import('./views/NotFound'));
 
 /**
  * @author CosmicTiger
@@ -13,6 +18,8 @@ const Home = React.lazy(() => import('./views/Home'));
  */
 const routes = [
     { path: '/', exact: true, name: 'Home', component: Home },
+    { path: '/user/:login', exact: true, name: 'Profile', component: Profile },
+    { component: NotFound }
 ];
 
 export default routes;

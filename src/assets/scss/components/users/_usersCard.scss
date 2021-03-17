@@ -1,0 +1,49 @@
+.UserCard {
+	background-color: $darkblue;
+	color: $white;
+	padding: 20px 8px;
+
+	&-header {
+		@include flex-container(
+			$direction: row,
+			$main-axis: center,
+			$sec-axis: center
+		);
+		& img {
+			border-radius: 50%;
+			width: 120px;
+		}
+	}
+
+	&-body {
+		text-align: center;
+		margin-left: auto;
+		margin-top: 10px;
+		margin-right: auto;
+
+		& a {
+			background-color: $light-white;
+		}
+	}
+
+	&-title {
+		font-size: 0.9rem;
+		&[data-id]::before {
+			display: inline-block;
+			content: attr(data-id);
+			margin-right: 5px;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		&-header img {
+			width: 140px;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		&-header img {
+			width: 170px;
+		}
+	}
+}

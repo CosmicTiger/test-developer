@@ -8,8 +8,6 @@ import routes from '../../routes';
 import Header from '../Header';
 import Footer from '../Footer';
 
-import '../../assets/scss/main.scss';
-
 /**
  * @author CosmicTiger
  * @description This is my main component which helps to display out
