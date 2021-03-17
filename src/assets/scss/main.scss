@@ -13,7 +13,10 @@
 @import "base/base";
 
 // Components Styles
+@import "components/layout/spinner";
 @import "components/navbar/navbar";
+@import "components/users/usersCard";
+@import "components/users/usersList";
 @import "components/footer/footer";
 
 // Views Styles

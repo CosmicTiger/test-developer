@@ -1,11 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import Spinner from './components/BasicLayout/Spinner';
 
-// A simple component that will be set when the view is loading
-const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
+import './assets/scss/main.scss';
 
 // Containers imports taking profit of lazy method from React library
-const BasicLayout = React.lazy(() => import('./containers/BasicLayout/index'));
+// a setTimeout was added to use the Loading Spinner
+const BasicLayout = React.lazy(() => new Promise((resolve) => {
+  setTimeout(() => resolve(import('./containers/BasicLayout/index')), 500)
+}));
 
 /**
  * @author CosmicTiger
@@ -18,11 +21,9 @@ const BasicLayout = React.lazy(() => import('./containers/BasicLayout/index'));
  */
 function App() {
   return (
-    <BrowserRouter>
-      <React.Suspense fallback={loading()}>
-        <Route path="/" name="Main" component={BasicLayout} />
-      </React.Suspense>
-    </BrowserRouter>
+    <React.Suspense fallback={<Spinner />}>
+      <Route path="/" name="Main" component={BasicLayout} />
+    </React.Suspense>
   );
 }
 

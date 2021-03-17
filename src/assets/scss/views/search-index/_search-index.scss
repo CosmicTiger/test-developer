@@ -4,3 +4,12 @@
  * @description this file would be for styling
  * elements in general within our main page in route '/'
  */
+.Home {
+	&-body {
+		@include flex-container(
+			$direction: row,
+			$main-axis: center,
+			$sec-axis: center
+		);
+	}
+}
