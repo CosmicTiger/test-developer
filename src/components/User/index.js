@@ -21,7 +21,7 @@ const Users = (props) => {
             <div className='UsersList'>
                 <div className='UsersList-wrapper'>
                     {
-                        users && map(users, (user, idx) => {
+                        users && map(users, (user) => {
                             return <UserCard key={user.id} user={user} />
                         })
                     }

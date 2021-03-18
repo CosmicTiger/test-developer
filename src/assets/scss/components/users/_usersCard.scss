@@ -15,23 +15,55 @@
 		}
 	}
 
-	&-body {
-		text-align: center;
-		margin-left: auto;
-		margin-top: 10px;
-		margin-right: auto;
-
-		& a {
-			background-color: $light-white;
-		}
-	}
-
 	&-title {
 		font-size: 0.9rem;
 		&[data-id]::before {
 			display: inline-block;
 			content: attr(data-id);
 			margin-right: 5px;
+		}
+	}
+
+	&-mapIcon {
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	&-body {
+		text-align: center;
+		margin-left: auto;
+		margin-top: 10px;
+		margin-right: auto;
+		position: relative;
+
+		& a {
+			background-color: $light-white;
+		}
+	}
+
+	&-contentWrapper {
+		@include flex-container(
+			$direction: column,
+			$main-axis: center,
+			$sec-axis: center
+		);
+	}
+
+	&-bio {
+		text-align: center;
+		width: 680px;
+	}
+
+	&-badges {
+		@include flex-container(
+			$direction: row,
+			$main-axis: space-around,
+			$sec-axis: center
+		);
+		width: 40%;
+
+		.badges {
+			font-size: 80%;
 		}
 	}
 
@@ -45,5 +77,23 @@
 		&-header img {
 			width: 170px;
 		}
+	}
+}
+
+.Details.UserCard {
+	width: 100%;
+
+	& .UserCard-header {
+		flex-direction: column;
+		padding-top: 20px;
+		text-align: center;
+	}
+
+	& .UserCard-header .UserCard-titleWrapper {
+		margin-top: 20px;
+	}
+
+	& .UserCard-body a {
+		margin: 10px 40px;
 	}
 }

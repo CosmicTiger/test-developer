@@ -2,6 +2,7 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk'; // This will help us to support Promises in order to consume the backend
 import usersReducer from './usersDuck';
+import followersReducer from './followersDuck';
 
 /**
  * @author CosmicTiger
@@ -13,6 +14,7 @@ import usersReducer from './usersDuck';
  */
 const rootReducer = combineReducers({
     users: usersReducer,
+    followers: followersReducer,
 })
 
 // For debugging purposes

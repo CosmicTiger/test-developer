@@ -1,0 +1,16 @@
+.FollowerCard {
+	@include flex-container(
+		$direction: row,
+		$main-axis: space-evenly,
+		$sec-axis: center
+	);
+
+	&-header & img {
+		border-radius: 50%;
+		width: 120px;
+	}
+
+	&-body {
+		text-align: center;
+	}
+}

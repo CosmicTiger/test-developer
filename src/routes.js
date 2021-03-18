@@ -4,7 +4,7 @@ import React from 'react';
 // Main view of the search
 const Home = React.lazy(() => import('./views/Home'));
 // View for the details of each Github User
-const Profile = React.lazy(() => <p>This is a test</p>);
+const Profile = React.lazy(() => import('./views/Profile'));
 // View for any type of wrong path inserted by the user
 const NotFound = React.lazy(() => import('./views/NotFound'));
 

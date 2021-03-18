@@ -28,7 +28,7 @@ const types = {
     CLEAR_USERS: 'CLEAR_USERS',
     SET_LOADING: 'SET_LOADING',
     GET_USER: 'GET_USER',
-    GET_REPOS: 'GET_REPOS'
+    GET_REPOS: 'GET_REPOS',
 }
 
 // Reducer
@@ -60,6 +60,12 @@ export default function usersReducer(state = initialState, action) {
             return {
                 ...state,
                 user: action.payload,
+                loading: false
+            }
+        case types.GET_REPOS:
+            return {
+                ...state,
+                repos: action.payload,
                 loading: false
             }
         default:
@@ -135,7 +141,7 @@ export const searchUsers = (text) => async (dispatch) => {
  * @params Object
  * @returns Object
  */
-export const getUser = username => (dispatch, getState) => {
+export const getUser = username => (dispatch) => {
     setLoading(dispatch);
 
     return github.get(`users/${username}`)
@@ -145,4 +151,24 @@ export const getUser = username => (dispatch, getState) => {
                 payload: res.data
             })
         });
+}
+
+export const getRepos = username => async (dispatch) => {
+    setLoading(dispatch);
+
+    const data = await github
+        .get(`users/${username}/repos`, {
+            params: {
+                per_page: PER_PAGE,
+                sort: 'created:asc'
+            }
+        })
+        .then(res => {
+            dispatch({
+                type: types.GET_REPOS,
+                payload: res.data,
+            });
+        });
+
+    return data;
 }
